@@ -5,7 +5,7 @@ const GroceryList = ({ groceries, handleDelete }) => (
   <ul className="groceries">
     {
       groceries.map(grocery => (
-        <GroceryEntry grocery={grocery} handleDelete={handleDelete}/>
+        <GroceryEntry key={grocery.id + ''} grocery={grocery} handleDelete={handleDelete}/>
       ))
     }
   </ul>
