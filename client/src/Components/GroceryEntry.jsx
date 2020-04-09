@@ -1,9 +1,9 @@
 import React from 'react';
 
-const GroceryEntry = props => (
-  <li>
-    <span> frozen pizza </span>
-    <span> 5 </span>
+const GroceryEntry = ({ handleDelete, grocery }) => (
+  <li onClick={() => handleDelete(grocery)}>
+    <span> {grocery.item} </span>
+    <span> {grocery.quantity} </span>
   </li>
 );
 

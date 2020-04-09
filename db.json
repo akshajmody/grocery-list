@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "id": 1, "item": "apples", "quantity": "1" },
+    { "id": 2, "item": "bananas", "quantity": "2" },
+    { "id": 3, "item": "steak", "quantity": "4" }
+  ]
+}

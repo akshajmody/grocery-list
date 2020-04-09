@@ -8,11 +8,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       groceries: [
-        { item: 'Apple', quantity: 1}
+        { item: 'Apple', quantity: 1},
+        { item: 'Pear', quantity: 5}
       ]
     };
 
     this.handleItemSubmit = this.handleItemSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  componentDidMount() {
   }
 
   handleItemSubmit(item) {
@@ -23,12 +28,18 @@ class App extends React.Component {
     this.setState({ groceries }); // this.setSTate({ groceries: groceries })
   }
 
+  handleDelete(grocery) {
+    const groceries = [...this.state.groceries];
+    const filtered = groceries.filter(item => item !== grocery);
+    this.setState({ groceries: filtered })
+  }
+
   render() {
     return (
       <div>HELLO FROM APP
         <GroceryPicture />
         <GroceryForm handleSubmit={this.handleItemSubmit} />
-        <GroceryList />
+        <GroceryList groceries={this.state.groceries} handleDelete={this.handleDelete}/>
       </div>
     )
   }

@@ -1,9 +1,13 @@
 import React from 'react';
 import GroceryEntry from './GroceryEntry.jsx';
 
-const GroceryList = props => (
+const GroceryList = ({ groceries, handleDelete }) => (
   <ul className="groceries">
-    <GroceryEntry />
+    {
+      groceries.map(grocery => (
+        <GroceryEntry grocery={grocery} handleDelete={handleDelete}/>
+      ))
+    }
   </ul>
 );
 
